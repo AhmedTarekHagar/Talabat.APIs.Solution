@@ -1,0 +1,12 @@
+D:\Route ASP\Assignments\Talabat.APIs.Solution\Talabat.Service\bin\Debug\net5.0\Talabat.Service.deps.json
+D:\Route ASP\Assignments\Talabat.APIs.Solution\Talabat.Service\bin\Debug\net5.0\Talabat.Service.dll
+D:\Route ASP\Assignments\Talabat.APIs.Solution\Talabat.Service\bin\Debug\net5.0\Talabat.Service.pdb
+D:\Route ASP\Assignments\Talabat.APIs.Solution\Talabat.Service\obj\Debug\net5.0\Talabat.Service.csproj.AssemblyReference.cache
+D:\Route ASP\Assignments\Talabat.APIs.Solution\Talabat.Service\obj\Debug\net5.0\Talabat.Service.GeneratedMSBuildEditorConfig.editorconfig
+D:\Route ASP\Assignments\Talabat.APIs.Solution\Talabat.Service\obj\Debug\net5.0\Talabat.Service.AssemblyInfoInputs.cache
+D:\Route ASP\Assignments\Talabat.APIs.Solution\Talabat.Service\obj\Debug\net5.0\Talabat.Service.AssemblyInfo.cs
+D:\Route ASP\Assignments\Talabat.APIs.Solution\Talabat.Service\obj\Debug\net5.0\Talabat.Service.csproj.CoreCompileInputs.cache
+D:\Route ASP\Assignments\Talabat.APIs.Solution\Talabat.Service\obj\Debug\net5.0\Talabat.Service.dll
+D:\Route ASP\Assignments\Talabat.APIs.Solution\Talabat.Service\obj\Debug\net5.0\refint\Talabat.Service.dll
+D:\Route ASP\Assignments\Talabat.APIs.Solution\Talabat.Service\obj\Debug\net5.0\Talabat.Service.pdb
+D:\Route ASP\Assignments\Talabat.APIs.Solution\Talabat.Service\obj\Debug\net5.0\ref\Talabat.Service.dll
