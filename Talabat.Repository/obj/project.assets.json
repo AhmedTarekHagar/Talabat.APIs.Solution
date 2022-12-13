@@ -5958,11 +5958,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Route ASP\\Assignments\\Talabat.APIs.Solution\\Talabat.Repository\\Talabat.Repository.csproj",
+      "projectUniqueName": "C:\\Users\\Don\\Desktop\\Talabat.APIs.Solution\\Talabat.Repository\\Talabat.Repository.csproj",
       "projectName": "Talabat.Repository",
-      "projectPath": "D:\\Route ASP\\Assignments\\Talabat.APIs.Solution\\Talabat.Repository\\Talabat.Repository.csproj",
+      "projectPath": "C:\\Users\\Don\\Desktop\\Talabat.APIs.Solution\\Talabat.Repository\\Talabat.Repository.csproj",
       "packagesPath": "C:\\Users\\Don\\.nuget\\packages\\",
-      "outputPath": "D:\\Route ASP\\Assignments\\Talabat.APIs.Solution\\Talabat.Repository\\obj\\",
+      "outputPath": "C:\\Users\\Don\\Desktop\\Talabat.APIs.Solution\\Talabat.Repository\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Don\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -5979,8 +5979,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "D:\\Route ASP\\Assignments\\Talabat.APIs.Solution\\Talabat.Core\\Talabat.Core.csproj": {
-              "projectPath": "D:\\Route ASP\\Assignments\\Talabat.APIs.Solution\\Talabat.Core\\Talabat.Core.csproj"
+            "C:\\Users\\Don\\Desktop\\Talabat.APIs.Solution\\Talabat.Core\\Talabat.Core.csproj": {
+              "projectPath": "C:\\Users\\Don\\Desktop\\Talabat.APIs.Solution\\Talabat.Core\\Talabat.Core.csproj"
             }
           }
         }

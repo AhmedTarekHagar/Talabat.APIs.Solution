@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Route ASP\\Assignments\\Talabat.APIs.Solution\\Talabat.Core\\Talabat.Core.csproj",
+      "projectUniqueName": "C:\\Users\\Don\\Desktop\\Talabat.APIs.Solution\\Talabat.Core\\Talabat.Core.csproj",
       "projectName": "Talabat.Core",
-      "projectPath": "D:\\Route ASP\\Assignments\\Talabat.APIs.Solution\\Talabat.Core\\Talabat.Core.csproj",
+      "projectPath": "C:\\Users\\Don\\Desktop\\Talabat.APIs.Solution\\Talabat.Core\\Talabat.Core.csproj",
       "packagesPath": "C:\\Users\\Don\\.nuget\\packages\\",
-      "outputPath": "D:\\Route ASP\\Assignments\\Talabat.APIs.Solution\\Talabat.Core\\obj\\",
+      "outputPath": "C:\\Users\\Don\\Desktop\\Talabat.APIs.Solution\\Talabat.Core\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Don\\AppData\\Roaming\\NuGet\\NuGet.Config",
