@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "UKDbD2l1QrAcZTGkEoq3qOB9QUJkZtuK8eqmPuEOyjrRozbhXgtcLzcjSXxxuobkrdrEH38xeibyrxC+aPSz8A==",
+  "dgSpecHash": "j9aiwUPBnmMvnQfp/Ljb0/YmuKaALYacfHQJCCGKTbnG9cCBsD1sIxV69Dhe1ysXoAPQkbcp8AaB9dsRjFGOwQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Don\\Desktop\\Talabat.APIs.Solution\\Talabat.APIs\\Talabat.APIs.csproj",
   "expectedPackageFiles": [
@@ -39,7 +39,9 @@
     "C:\\Users\\Don\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\Don\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Users\\Don\\.nuget\\packages\\newtonsoft.json\\10.0.1\\newtonsoft.json.10.0.1.nupkg.sha512",
+    "C:\\Users\\Don\\.nuget\\packages\\pipelines.sockets.unofficial\\2.2.2\\pipelines.sockets.unofficial.2.2.2.nupkg.sha512",
     "C:\\Users\\Don\\.nuget\\packages\\runtime.native.system\\4.3.0\\runtime.native.system.4.3.0.nupkg.sha512",
+    "C:\\Users\\Don\\.nuget\\packages\\stackexchange.redis\\2.6.86\\stackexchange.redis.2.6.86.nupkg.sha512",
     "C:\\Users\\Don\\.nuget\\packages\\swashbuckle.aspnetcore\\5.6.3\\swashbuckle.aspnetcore.5.6.3.nupkg.sha512",
     "C:\\Users\\Don\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\5.6.3\\swashbuckle.aspnetcore.swagger.5.6.3.nupkg.sha512",
     "C:\\Users\\Don\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\5.6.3\\swashbuckle.aspnetcore.swaggergen.5.6.3.nupkg.sha512",
@@ -66,6 +68,7 @@
     "C:\\Users\\Don\\.nuget\\packages\\system.io\\4.3.0\\system.io.4.3.0.nupkg.sha512",
     "C:\\Users\\Don\\.nuget\\packages\\system.io.filesystem\\4.3.0\\system.io.filesystem.4.3.0.nupkg.sha512",
     "C:\\Users\\Don\\.nuget\\packages\\system.io.filesystem.primitives\\4.3.0\\system.io.filesystem.primitives.4.3.0.nupkg.sha512",
+    "C:\\Users\\Don\\.nuget\\packages\\system.io.pipelines\\5.0.1\\system.io.pipelines.5.0.1.nupkg.sha512",
     "C:\\Users\\Don\\.nuget\\packages\\system.linq\\4.3.0\\system.linq.4.3.0.nupkg.sha512",
     "C:\\Users\\Don\\.nuget\\packages\\system.linq.expressions\\4.3.0\\system.linq.expressions.4.3.0.nupkg.sha512",
     "C:\\Users\\Don\\.nuget\\packages\\system.net.nameresolution\\4.3.0\\system.net.nameresolution.4.3.0.nupkg.sha512",

@@ -19,7 +19,6 @@ namespace Talabat.APIs.Extentions
 
         public static IApplicationBuilder UseSwaggerDecumentation(this IApplicationBuilder app)
         {
-            app.UseDeveloperExceptionPage();
             app.UseSwagger();
             app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Talabat.APIs v1"));
 
