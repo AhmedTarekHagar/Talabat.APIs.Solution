@@ -14,11 +14,13 @@ namespace Talabat.APIs.Helpers
                 .ForMember(D=> D.ProductType, O => O.MapFrom(S => S.ProductType.Name))
                 .ForMember(D => D.PictureUrl, O => O.MapFrom<ProductPictureUrlResolver>());
 
-            CreateMap<AddressDto, Address>().ReverseMap();
+            CreateMap<AddressDto, Core.Entities.Identity.Address>().ReverseMap();
 
             CreateMap<CustomerBasketDto, CustomerBasket>();
 
             CreateMap<BasketItemDto, BasketItem>();
+
+            CreateMap<AddressDto, Core.Entities.Order_Aggregate.Address>();
         }
     }
 }
