@@ -22,3 +22,6 @@ C:\Users\Don\Desktop\Talabat.APIs.Solution\Talabat.Service\obj\Debug\net5.0\Tala
 C:\Users\Don\Desktop\Talabat.APIs.Solution\Talabat.Service\obj\Debug\net5.0\refint\Talabat.Service.dll
 C:\Users\Don\Desktop\Talabat.APIs.Solution\Talabat.Service\obj\Debug\net5.0\Talabat.Service.pdb
 C:\Users\Don\Desktop\Talabat.APIs.Solution\Talabat.Service\obj\Debug\net5.0\ref\Talabat.Service.dll
+C:\Users\Don\Desktop\Talabat.APIs.Solution\Talabat.Service\bin\Debug\net5.0\Talabat.Core.dll
+C:\Users\Don\Desktop\Talabat.APIs.Solution\Talabat.Service\bin\Debug\net5.0\Talabat.Core.pdb
+C:\Users\Don\Desktop\Talabat.APIs.Solution\Talabat.Service\obj\Debug\net5.0\Talabat.Service.csproj.CopyComplete

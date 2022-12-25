@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -8,7 +9,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Talabat.Core.Entities.Identity;
 using Talabat.Repository.Data;
+using Talabat.Repository.Identity;
 
 namespace Talabat.APIs
 {
@@ -29,6 +32,12 @@ namespace Talabat.APIs
                 await context.Database.MigrateAsync();
 
                 await TalabatContextSeed.SeedAsync(context, loggerFactory);
+
+                var identityContext = services.GetRequiredService<AppIdentityDbContext>();
+                await identityContext.Database.MigrateAsync();
+
+                var userManager = services.GetRequiredService<UserManager<AppUser>>();
+                await AppIdentityDbContextSeed.SeedUsersAsync(userManager);
             }
             catch (Exception ex)
             {

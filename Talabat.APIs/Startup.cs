@@ -8,6 +8,7 @@ using StackExchange.Redis;
 using Talabat.APIs.Extentions;
 using Talabat.APIs.MiddleWares;
 using Talabat.Repository.Data;
+using Talabat.Repository.Identity;
 
 namespace Talabat.APIs
 {
@@ -32,16 +33,23 @@ namespace Talabat.APIs
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
             });
 
+            services.AddDbContext<AppIdentityDbContext>(options =>
+            {
+                options.UseSqlServer(Configuration.GetConnectionString("IdentityConnection"));
+            });
+
             services.AddSingleton<IConnectionMultiplexer>(S =>
             {
                 var connection = ConfigurationOptions.Parse(Configuration.GetConnectionString("Redis"));
-
                 return ConnectionMultiplexer.Connect(connection);
             });
 
             services.AddApplicationServices();
 
             services.AddSwaggerService();
+
+            services.AddIdentityServices(Configuration);
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -60,7 +68,9 @@ namespace Talabat.APIs
 
             app.UseRouting();
 
+            app.UseAuthentication();
 
+            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
