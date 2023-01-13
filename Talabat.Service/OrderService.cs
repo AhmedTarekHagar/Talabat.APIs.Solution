@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,25 +8,19 @@ using Talabat.Core.Entities;
 using Talabat.Core.Entities.Order_Aggregate;
 using Talabat.Core.IRepositories;
 using Talabat.Core.IServices;
+using Talabat.Core.Specifications;
 
 namespace Talabat.Service
 {
     public class OrderService : IOrderService
     {
         private readonly IBasketRepository _basketRepository;
-        private readonly IGenericRepository<Product> _productsRepo;
-        private readonly IGenericRepository<DeliveryMethod> _deliveryMethods;
-        private readonly IGenericRepository<Order> _ordersRepo;
+        private readonly IUnitOfWork _unitOfWork;
 
-        public OrderService(IBasketRepository basketRepository,
-            IGenericRepository<Product> productsRepo,
-            IGenericRepository<DeliveryMethod> deliveryMethods,
-            IGenericRepository<Order> ordersRepo)
+        public OrderService(IBasketRepository basketRepository,IUnitOfWork unitOfWork)
         {
             _basketRepository = basketRepository;
-            _productsRepo = productsRepo;
-            _deliveryMethods = deliveryMethods;
-            _ordersRepo = ordersRepo;
+            _unitOfWork = unitOfWork;
         }
         public async Task<Order> CreateOrderAsync(string buyerEmail, string basketId, int deliveryMethodId, Address shippingAddress)
         {
@@ -35,7 +30,7 @@ namespace Talabat.Service
 
             foreach (var item in basket.Items)
             {
-                var product = await _productsRepo.GetByIdAsync(item.Id);
+                var product = await _unitOfWork.Repository<Product>().GetByIdAsync(item.Id);
                 var producItemOrdered = new ProductItemOrdered(product.Id, product.Name, product.PictureUrl);
                 var orderItem = new OrderItem(producItemOrdered, product.Price, item.Quantity);
 
@@ -44,27 +39,39 @@ namespace Talabat.Service
 
             var subTotal = orderItems.Sum(item => item.Price * item.Quantity);
 
-            var deliveryMethod = await _deliveryMethods.GetByIdAsync(deliveryMethodId);
+            var deliveryMethod = await _unitOfWork.Repository<DeliveryMethod>().GetByIdAsync(deliveryMethodId);
 
             var order = new Order(buyerEmail, shippingAddress, deliveryMethod, orderItems, subTotal);
 
-            await _ordersRepo.CreateAsync(order);
+            await _unitOfWork.Repository<Order>().CreateAsync(order);
+
+            var result = await _unitOfWork.Complete();
+
+            if (result <= 0) return null;
+
             return order;
         }
 
-        public Task<IReadOnlyList<DeliveryMethod>> GetDeliveryMethodsAsync()
+        public async Task<IReadOnlyList<DeliveryMethod>> GetDeliveryMethodsAsync()
         {
-            throw new NotImplementedException();
+            var deliveryMethods = await _unitOfWork.Repository<DeliveryMethod>().GetAllAsync();
+            return deliveryMethods;
         }
 
-        public Task<Order> GetOrderByIdForUserAsync(int orderId, string buyerEmail)
+        public async Task<Order> GetOrderByIdForUserAsync(int orderId, string buyerEmail)
         {
-            throw new NotImplementedException();
+            var spec = new OrderWithItemsAndDeliveryMethodSpecification(orderId, buyerEmail);
+            var order = await _unitOfWork.Repository<Order>().GetByIdWithSpecAsync(spec);
+            return order;
         }
 
-        public Task<IReadOnlyList<Order>> GetOrdersForUserAsync(string buyerEmail)
+        public async Task<IReadOnlyList<Order>> GetOrdersForUserAsync(string buyerEmail)
         {
-            throw new NotImplementedException();
+            var spec = new OrderWithItemsAndDeliveryMethodSpecification(buyerEmail);
+
+            var orders = await _unitOfWork.Repository<Order>().GetAllWithSpecAsync(spec);
+
+            return orders;
         }
     }
 }

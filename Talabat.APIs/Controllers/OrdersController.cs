@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Talabat.APIs.Dtos;
@@ -24,7 +25,7 @@ namespace Talabat.APIs.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<Order>> CreateOrder(OrderDto orderDto)
+        public async Task<ActionResult<OrderToReturnDto>> CreateOrder(OrderDto orderDto)
         {
             var buyerEmail = User.FindFirstValue(ClaimTypes.Email);
 
@@ -33,7 +34,43 @@ namespace Talabat.APIs.Controllers
             var order = await _orderService.CreateOrderAsync(buyerEmail, orderDto.BasketId, orderDto.DeliveryMethodId, orderAddress);
 
             if (order == null) return BadRequest(new ApiResponse(400));
-            return Ok(order);
+
+            var mappedOrder = _mapper.Map<Order, OrderToReturnDto>(order);
+
+            return Ok(mappedOrder);
+        }
+
+        [HttpGet]
+        public async Task<ActionResult<IReadOnlyList<OrderToReturnDto>>> GetOrdersForUser()
+        {
+            var buyerEmail = User.FindFirstValue(ClaimTypes.Email);
+
+            var orders = await _orderService.GetOrdersForUserAsync(buyerEmail);
+
+            var mappedOrders = _mapper.Map<IReadOnlyList<Order>, IReadOnlyList<OrderToReturnDto>>(orders);
+
+            return Ok(mappedOrders);
+        }
+
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Order>> GetOrderForUser(int id)
+        {
+            var buyerEmail = User.FindFirstValue(ClaimTypes.Email);
+
+            var order = await _orderService.GetOrderByIdForUserAsync(id, buyerEmail);
+
+            if (order == null) return BadRequest(new ApiResponse(400));
+
+            var mappedOrder = _mapper.Map<Order, OrderToReturnDto>(order);
+
+            return Ok(mappedOrder);
+        }
+
+        [HttpGet("deliverymethods")]
+        public async Task<ActionResult<IReadOnlyList<DeliveryMethod>>> getDeliveryMethods()
+        {
+            var deliveryMethods = await _orderService.GetDeliveryMethodsAsync();
+            return Ok(deliveryMethods);
         }
 
     }
