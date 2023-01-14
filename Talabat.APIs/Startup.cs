@@ -50,6 +50,15 @@ namespace Talabat.APIs
 
             services.AddIdentityServices(Configuration);
 
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CorsPolicy", options =>
+                {
+                    //options.AllowAnyHeader().AllowAnyMethod().WithOrigins("Domain goes here");
+                    options.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin();
+                });
+            });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -67,6 +76,8 @@ namespace Talabat.APIs
             app.UseStaticFiles();
 
             app.UseRouting();
+
+            app.UseCors("CorsPolicy");
 
             app.UseAuthentication();
 

@@ -21,6 +21,8 @@ namespace Talabat.APIs.Extentions
 
             services.AddScoped<ITokenService, TokenService>();
 
+            services.AddScoped<IPaymentService, PaymentService>();
+
             services.AddScoped(typeof(IBasketRepository), typeof(BasketRepository));
 
             services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));

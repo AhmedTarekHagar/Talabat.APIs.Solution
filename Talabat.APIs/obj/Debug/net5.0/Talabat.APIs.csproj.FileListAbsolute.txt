@@ -152,3 +152,5 @@ C:\Users\Don\Desktop\Talabat.APIs.Solution\Talabat.APIs\bin\Debug\net5.0\Microso
 C:\Users\Don\Desktop\Talabat.APIs.Solution\Talabat.APIs\bin\Debug\net5.0\Talabat.Service.dll
 C:\Users\Don\Desktop\Talabat.APIs.Solution\Talabat.APIs\bin\Debug\net5.0\Talabat.Service.pdb
 C:\Users\Don\Desktop\Talabat.APIs.Solution\Talabat.APIs\obj\Debug\net5.0\Talabat.APIs.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Don\Desktop\Talabat.APIs.Solution\Talabat.APIs\bin\Debug\net5.0\Newtonsoft.Json.dll
+C:\Users\Don\Desktop\Talabat.APIs.Solution\Talabat.APIs\bin\Debug\net5.0\Stripe.net.dll
