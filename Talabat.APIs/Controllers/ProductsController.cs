@@ -32,7 +32,7 @@ namespace Talabat.APIs.Controllers
             _typesRepo = typesRepo;
             _mapper = mapper;
         }
-
+        [CachedAttribute(300)]
         [HttpGet]
         public async Task<ActionResult<Pagination<ProductToReturnDto>>> GetProducts([FromQuery]ProductSpecParams productParams)
         {
